@@ -306,10 +306,6 @@ ENV PYTHONPATH=/home/continuumuser/workdir/sources/libraries:${PYTHONPATH}
 # 8) Expose Jupyter port & default command
 # ----------------------------------------
 EXPOSE 8888
-CMD ["jupyter", "notebook", \
-     "--ip=0.0.0.0", \
-     "--port=8888", \
-     "--no-browser", \
-     "--NotebookApp.token=''", \
-     "--NotebookApp.notebook_dir=/home/continuumuser/workdir"]
+COPY launcher.sh .
+ENTRYPOINT ["launcher.sh"]
 

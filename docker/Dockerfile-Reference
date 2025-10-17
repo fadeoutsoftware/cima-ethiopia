@@ -1,0 +1,102 @@
+FROM ubuntu:20.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV PYTHONPATH=""
+
+# ----------------------------------------
+# 1) System packages and GRASS/SAGA/GDAL (with UbuntuGIS PPA)
+# ----------------------------------------
+RUN apt-get update \
+ && apt-get install -y software-properties-common \
+ && add-apt-repository ppa:ubuntugis/ubuntugis-unstable -y \
+ && apt-get update \
+ && apt-get install -y \
+    python3.8 python3.8-dev python3-pip \
+    git build-essential curl nano wget unzip \
+    grass grass-dev grass-doc \
+    saga \
+    gdal-bin python3-gdal \
+    libgdal-dev python3-gi \
+ && apt-get clean
+
+# ----------------------------------------
+# 2) Make python3.8 the default
+# ----------------------------------------
+RUN ln -sf /usr/bin/python3.8 /usr/bin/python \
+ && ln -sf /usr/bin/python3.8 /usr/bin/python3
+
+# ----------------------------------------
+# 3) Python libraries
+# ----------------------------------------
+RUN pip install --no-cache-dir \
+    numpy==1.23.5 pandas matplotlib \
+    notebook==6.5.6 \
+    jupyterlab==3.6.6 \
+    jupyter_core==5.5.0 \
+    jupyter_client==7.4.9 \
+    xarray netCDF4 tqdm \
+    grass-session rasterio \
+    geopandas==0.13.2 shapely>=2.0 pyproj>=3.5 fiona==1.9.6 \
+    ipywidgets folium scipy
+
+# Abilita l’estensione per Notebook
+RUN jupyter nbextension install --py widgetsnbextension --sys-prefix \
+ && jupyter nbextension enable --py widgetsnbextension --sys-prefix
+# ----------------------------------------
+# 4) Create non-root user
+# ----------------------------------------
+RUN useradd -ms /bin/bash continuumuser
+
+# ----------------------------------------
+# 5) As root: create GRASS location, loosen perms, install addons
+# ----------------------------------------
+USER root
+
+# 5a) Create the WGS84 location
+RUN mkdir -p /home/continuumuser/grassdata \
+ && grass78 -c EPSG:4326 /home/continuumuser/grassdata/WGS84 \
+      --exec echo "GRASS WGS84 created"
+
+RUN chown -R continuumuser:continuumuser /home/continuumuser/grassdata
+RUN chmod -R a+rwx /home/continuumuser/grassdata/WGS84/PERMANENT
+USER continuumuser
+ENV HOME=/home/continuumuser
+
+# 5c) Compile & install the two addons
+RUN grass78 --text /home/continuumuser/grassdata/WGS84/PERMANENT \
+      --exec g.extension extension=r.stream.basins operation=add \
+        url=https://svn.osgeo.org/grass/grass-addons/grass7/ --quiet \
+ && grass78 --text /home/continuumuser/grassdata/WGS84/PERMANENT \
+      --exec g.extension extension=r.accumulate operation=add \
+        url=https://svn.osgeo.org/grass/grass-addons/grass7/ --quiet
+
+#ENV PATH="/usr/lib/grass78/bin:${PATH}"
+ 
+# 5d) Restore ownership and tighten perms again
+#RUN chown -R continuumuser:continuumuser /home/continuumuser/grassdata \
+# && rm -rf /root/.grass7/addons \
+# && chmod -R go-w /home/continuumuser/grassdata/WGS84/PERMANENT
+
+# ----------------------------------------
+# 6) Switch back to non-root
+# ----------------------------------------
+USER continuumuser
+
+# ----------------------------------------
+# 7) Set up your workspace and PYTHONPATH
+# ----------------------------------------
+WORKDIR /home/continuumuser/workdir
+ENV PYTHONPATH=/home/continuumuser/workdir/sources/libraries:${PYTHONPATH}
+
+
+# ----------------------------------------
+# 8) Expose Jupyter port & default command
+# ----------------------------------------
+EXPOSE 8888
+CMD ["jupyter", "notebook", \
+     "--ip=0.0.0.0", \
+     "--port=8888", \
+     "--no-browser", \
+     "--NotebookApp.token=''", \
+     "--NotebookApp.notebook_dir=/home/continuumuser/workdir"]
+

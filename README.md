@@ -1,8 +1,12 @@
-### ETHIOPIA - CIMA - HMC Trainings
-Repository to create a portable docker environment to be used during trainings hel by CIMA's staff in Ethiopia.
+# ETHIOPIA - CIMA - HMC Trainings
+Repository to create a portable docker environment to be used during trainings held by CIMA's staff in Ethiopia.
 
-### Project structure 
-[TODO]
+# Project structure 
+### Docker dir 
+The directory contains a docker file and scripts to setup the docker environment.
+### Data dir 
+This directory, excluded from versioning, must contains the data passed by CIMA, the first archive shared.
+DOCs can be dropped.
 
 
 ## Useful commands 

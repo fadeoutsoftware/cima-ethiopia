@@ -239,25 +239,12 @@ RUN echo "source ${LIBS_SYSTEM_DIR}/${SYSTEM_ENV_FILE}" >> /home/app/.profile
 
 WORKDIR /app/shybox
 RUN git clone https://github.com/c-hydro/shybox.git --branch itwater --single-branch /app/shybox/
-COPY requirements_shybox_base.yaml /app/shybox
-
-RUN /app/shybox/setup_conda_shybox_base.sh
-
-ENV	CONDA_PATH=/app/shybox/conda
-
-WORKDIR /app/shybox/workflow/runner
-COPY venvSetup.sh /app/shybox/workflow/runner
-ENV PYTHONPATH=""
-RUN /app/shybox/workflow/runner/venvSetup.sh
-ENV PYTHONPATH="${PYTHONPATH}:/app/shybox"
-
-#RUN jupyter nbextension install --py widgetsnbextension --sys-prefix \
-# && jupyter nbextension enable --py widgetsnbextension --sys-prefix -> Migrated to venvSetup.sh
 
 
+COPY requirements_aics_iwrm.txt /app/shybox
+COPY requirements.sh /app/shybox
 
-COPY app_runner_workflow_hmc_base.json /app/shybox/workflow/runner
-COPY app_runner_workflow_hmc_base_main.py /app/shybox/workflow/runner
+RUN /app/shybox/requirements.sh
 
 USER root
 RUN useradd -ms /bin/bash --gid=app \

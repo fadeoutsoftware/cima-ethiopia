@@ -305,7 +305,7 @@ ENV PYTHONPATH=/home/continuumuser/workdir/sources/libraries:${PYTHONPATH}
 # ----------------------------------------
 # 8) Expose Jupyter port & default command
 # ----------------------------------------
-EXPOSE 8888
+#EXPOSE 8888
 COPY launcher.sh .
-ENTRYPOINT ["launcher.sh"]
+ENTRYPOINT ["/home/continuumuser/workdir/launcher.sh"]
 

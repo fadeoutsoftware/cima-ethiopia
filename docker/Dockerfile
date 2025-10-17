@@ -182,6 +182,8 @@ RUN apt-get update && apt-get install -y \
     libgdal-dev python3-gi
 
 
+RUN apt-get install -y saga
+
 # Create a non-root user and group
 RUN groupadd \
 	--gid=$APP_UID \

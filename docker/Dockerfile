@@ -177,9 +177,16 @@ RUN apt-get update && apt-get install -y \
 	bash-completion \ 
     python3.8 python3.8-dev python3-pip \
     git build-essential curl nano wget unzip \
-	grass grass-dev grass-doc
-#    gdal-bin python3-gdal \
-#    libgdal-dev python3-gi
+	grass grass-dev grass-doc \
+    gdal-bin python3-gdal \
+    libgdal-dev python3-gi
+
+
+# ----------------------------------------
+# 2) Make python3.8 the default
+# ----------------------------------------
+RUN ln -sf /usr/bin/python3.8 /usr/bin/python \
+ && ln -sf /usr/bin/python3.8 /usr/bin/python3
 
 	# Create a non-root user and group
 RUN groupadd \
@@ -230,6 +237,9 @@ RUN echo "source ${LIBS_SYSTEM_DIR}/${SYSTEM_ENV_FILE}" >> /home/app/.bashrc
 # set environmental variable(s) appending in .profile
 RUN echo "source ${LIBS_SYSTEM_DIR}/${SYSTEM_ENV_FILE}" >> /home/app/.profile
 
+RUN echo "---------------------------"
+RUN echo $PATH
+RUN echo "---------------------------"
 # -----------------------------------------------------------------
 
 # -----------------------------------------------------------------
@@ -240,9 +250,9 @@ RUN echo "source ${LIBS_SYSTEM_DIR}/${SYSTEM_ENV_FILE}" >> /home/app/.profile
 WORKDIR /app/shybox
 RUN git clone https://github.com/c-hydro/shybox.git --branch itwater --single-branch /app/shybox/
 
-
 COPY requirements_aics_iwrm.txt /app/shybox
 COPY requirements.sh /app/shybox
+
 
 RUN /app/shybox/requirements.sh
 

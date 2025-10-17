@@ -5,6 +5,8 @@ source activate shybox_base_libraries
 
 export PYTHONPATH="${PYTHONPATH}:/app/shybox"
 
+#export PROJ_LIB=/usr/share/proj
+
 cd /home/continuumuser/workdir
 
 jupyter notebook \

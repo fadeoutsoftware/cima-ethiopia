@@ -177,10 +177,9 @@ RUN apt-get update && apt-get install -y \
 	bash-completion \ 
     python3.8 python3.8-dev python3-pip \
     git build-essential curl nano wget unzip \
-    grass grass-dev grass-doc \
-    saga \
-    gdal-bin python3-gdal \
-    libgdal-dev python3-gi 
+	grass grass-dev grass-doc
+#    gdal-bin python3-gdal \
+#    libgdal-dev python3-gi
 
 	# Create a non-root user and group
 RUN groupadd \
@@ -240,6 +239,7 @@ RUN echo "source ${LIBS_SYSTEM_DIR}/${SYSTEM_ENV_FILE}" >> /home/app/.profile
 
 WORKDIR /app/shybox
 RUN git clone https://github.com/c-hydro/shybox.git --branch itwater --single-branch /app/shybox/
+COPY requirements_shybox_base.yaml /app/shybox
 
 RUN /app/shybox/setup_conda_shybox_base.sh
 
@@ -254,11 +254,14 @@ ENV PYTHONPATH="${PYTHONPATH}:/app/shybox"
 #RUN jupyter nbextension install --py widgetsnbextension --sys-prefix \
 # && jupyter nbextension enable --py widgetsnbextension --sys-prefix -> Migrated to venvSetup.sh
 
+
+
 COPY app_runner_workflow_hmc_base.json /app/shybox/workflow/runner
 COPY app_runner_workflow_hmc_base_main.py /app/shybox/workflow/runner
 
 USER root
-RUN useradd -ms /bin/bash continuumuser
+RUN useradd -ms /bin/bash --gid=app \
+		continuumuser
 
 # ----------------------------------------
 # 5) As root: create GRASS location, loosen perms, install addons
@@ -270,7 +273,7 @@ RUN mkdir -p /home/continuumuser/grassdata \
  && grass -c EPSG:4326 /home/continuumuser/grassdata/WGS84 \
       --exec echo "GRASS WGS84 created"
 
-RUN chown -R continuumuser:continuumuser /home/continuumuser/grassdata
+RUN chown -R continuumuser:app /home/continuumuser/grassdata
 RUN chmod -R a+rwx /home/continuumuser/grassdata/WGS84/PERMANENT
 USER continuumuser
 ENV HOME=/home/continuumuser
@@ -306,6 +309,6 @@ ENV PYTHONPATH=/home/continuumuser/workdir/sources/libraries:${PYTHONPATH}
 # 8) Expose Jupyter port & default command
 # ----------------------------------------
 #EXPOSE 8888
-COPY launcher.sh .
-ENTRYPOINT ["/home/continuumuser/workdir/launcher.sh"]
+COPY launcher.sh /home/continuumuser
+ENTRYPOINT ["/home/continuumuser/launcher.sh"]
 

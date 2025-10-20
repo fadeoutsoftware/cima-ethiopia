@@ -127,6 +127,7 @@ RUN ./setup_fp_system_app_hmc.sh ${LIBS_SYSTEM_DIR} ${SYSTEM_ENV_FILE} ${PACKAGE
 # Runtime stage
 
 FROM ubuntu:24.04
+ENV PYTHONPATH=""
 
 # Setting required environment variables  [TODO check if needed in multi-layer build]
 ENV \
@@ -259,23 +260,25 @@ RUN mkdir -p /home/continuumuser/grassdata \
 
 RUN chown -R continuumuser:app /home/continuumuser/grassdata
 RUN chmod -R a+rwx /home/continuumuser/grassdata/WGS84/PERMANENT
+
 USER continuumuser
 ENV HOME=/home/continuumuser
 
-# 5c) Compile & install the two addons
-RUN grass --text /home/continuumuser/grassdata/WGS84/PERMANENT \
-      --exec g.extension extension=r.stream.basins operation=add \
-        --quiet \
- && grass --text /home/continuumuser/grassdata/WGS84/PERMANENT \
-      --exec g.extension extension=r.accumulate operation=add \
-     --quiet
+# Set grass base
+ENV GISBASE=/usr/lib/grass83
+ENV PYTHONPATH="${GISBASE}/etc/python:${PYTHONPATH}"
+ENV PATH="${GISBASE}/bin:${GISBASE}/scripts:${PATH}"
 
-#ENV PATH="/usr/lib/grass78/bin:${PATH}"
- 
-# 5d) Restore ownership and tighten perms again
-#RUN chown -R continuumuser:continuumuser /home/continuumuser/grassdata \
-# && rm -rf /root/.grass7/addons \
-# && chmod -R go-w /home/continuumuser/grassdata/WGS84/PERMANENT
+# Set addons path
+ENV GRASS_ADDON_BASE="${HOME}/.grass8/addons"
+ENV PATH="${GRASS_ADDON_BASE}/bin:${PATH}"
+ENV LD_LIBRARY_PATH="${GRASS_ADDON_BASE}/lib:${LD_LIBRARY_PATH}"
+
+# Install addons in continuumuser home
+RUN grass --text /home/continuumuser/grassdata/WGS84/PERMANENT \
+      --exec g.extension extension=r.stream.basins operation=add prefix=$GRASS_ADDON_BASE --quiet \
+ && grass --text /home/continuumuser/grassdata/WGS84/PERMANENT \
+      --exec g.extension extension=r.accumulate   operation=add prefix=$GRASS_ADDON_BASE --quiet
 
 # ----------------------------------------
 # 6) Switch back to non-root

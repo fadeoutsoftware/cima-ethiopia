@@ -237,9 +237,13 @@ RUN echo "source ${LIBS_SYSTEM_DIR}/${SYSTEM_ENV_FILE}" >> /home/app/.profile
 ### New repository SHYBOX
 
 WORKDIR /app/shybox
-RUN git clone https://github.com/c-hydro/shybox.git --branch itwater --single-branch /app/shybox/
+RUN git clone https://github.com/c-hydro/shybox.git --branch destine --single-branch /app/shybox/
 
 COPY requirements_aics_iwrm.txt /app/shybox
+
+# Shybox patch for Python 3.10 compatibility
+COPY ./patch/lib_utils_dict.py /app/shybox/shybox/generic_toolkit/
+
 COPY requirements.sh /app/shybox
 
 RUN /app/shybox/requirements.sh

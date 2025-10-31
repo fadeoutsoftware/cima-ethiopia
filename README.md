@@ -8,18 +8,17 @@ The directory contains a docker file and scripts to setup the docker environment
 This directory, excluded from versioning, must contains the data passed by CIMA, the first archive shared.
 DOCs can be dropped.
 
-
 ## Useful commands 
 
 Launch build from the /docker folder:
 ```
 cd docker
-docker build . -t cima-trainings
+docker build . -t ethiopia
 ```
 
 Execute the jupyter lab 
 ```
-docker run -p 8888:8888 --volume ./data:/home/continuumuser/workdir cima-trainings
+docker run -d -p 8888:8888 --volume ../data:/home/continuumuser/workdir ethiopia
 ```
 
 

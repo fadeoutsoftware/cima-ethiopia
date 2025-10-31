@@ -22,7 +22,8 @@ notebook
 jupyterlab
 jupyter_core
 jupyter_client
-ipywidgets
 folium
 grass-session
 repurpose
+ipympl
+ipywidgets

@@ -2,7 +2,7 @@
 cd /app/shybox 
 source .venv/bin/activate
 
-#export PYTHONPATH="${PYTHONPATH}:/app/shybox"
+export PYTHONPATH="${PYTHONPATH}:/app/shybox"
 
 #export PROJ_LIB=/usr/share/proj
 

@@ -18,7 +18,7 @@ docker build . -t ethiopia
 
 Execute the jupyter lab 
 ```
-docker run -d -p 8888:8888 --volume ../data:/home/continuumuser/workdir ethiopia
+docker run -d -p 8888:8888 --volume ../workspace:/home/continuumuser/workdir ethiopia
 ```
 
 

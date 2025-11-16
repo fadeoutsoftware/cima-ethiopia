@@ -1,0 +1,22 @@
+{
+  "general": {
+    "project": "awash_iwrm",
+    "domain": "awash"
+  },
+  "data": {
+    "choice": "awash.choice.txt",
+    "pnt": "awash.pnt.txt",
+    "dam_points": "awash_dams.shp",
+    "lake_points": "awash_lakes.shp",
+    "section_points": "awash_sections.shp"
+  },
+  "settings": {
+      "sections_name_col": "Name",
+      "sections_river_col": "River"
+   },
+  "path": {
+    "data": "data",
+	"gridded_input": "continuum/data_static/gridded",
+    "output": "continuum/data_static/point"
+  }
+}

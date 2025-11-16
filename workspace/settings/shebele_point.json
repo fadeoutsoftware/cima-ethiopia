@@ -1,0 +1,22 @@
+{
+  "general": {
+    "project": "shebele_iwrm",
+    "domain": "shebele"
+  },
+  "data": {
+    "choice": "shebele.choice.txt",
+    "pnt": "shebele.pnt.txt",
+    "dam_points": "shebele_dams.shp",
+    "lake_points": "shebele_lakes.shp",
+    "section_points": "shebele_sections.shp"
+  },
+  "settings": {
+      "sections_name_col": "Name",
+      "sections_river_col": "River"
+   },
+  "path": {
+    "data": "data",
+	"gridded_input": "continuum/data_static/gridded",
+    "output": "continuum/data_static/point"
+  }
+}

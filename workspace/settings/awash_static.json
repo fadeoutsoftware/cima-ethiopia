@@ -1,0 +1,31 @@
+{
+  "general": {
+    "project": "awash_iwrm",
+    "domain": "awash"
+  },
+  "data": {
+    "dem": "awash_dem.tif",
+    "stream": "iwrm_rivers.shp",
+    "depressions": "iwrm_depressions.shp",
+    "wall": "awash_walls.shp",
+    "mask": "awash_mask.shp",
+    "lake_mask" : "lakes_mowe_HydroLakes.shp"
+  },
+  "settings": {
+    "out_res_km": 1,
+    "soglia_basin_km2": 50
+  },
+  "flags": {
+    "change_dem_resolution": true,
+    "carve_dem": true,
+    "use_depressions": true,
+    "use_walls": true,
+    "use_mask": true,
+    "use_lake_mask": true
+  },
+  "path": {
+    "data": "data",
+    "ancillary": "ancillary",
+    "output": "continuum/data_static/gridded"
+  }
+}

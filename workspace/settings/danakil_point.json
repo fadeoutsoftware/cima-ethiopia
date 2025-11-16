@@ -1,0 +1,22 @@
+{
+  "general": {
+    "project": "danakil_iwrm",
+    "domain": "danakil"
+  },
+  "data": {
+    "choice": "danakil.choice.txt",
+    "pnt": "danakil.pnt.txt",
+    "dam_points": "danakil_dams.shp",
+    "lake_points": "danakil_lakes.shp",
+    "section_points": "danakil_sections.shp"
+  },
+  "settings": {
+      "sections_name_col": "Name",
+      "sections_river_col": "River"
+   },
+  "path": {
+    "data": "data",
+	"gridded_input": "continuum/data_static/gridded",
+    "output": "continuum/data_static/point"
+  }
+}

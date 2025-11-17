@@ -63,8 +63,8 @@ def prepare_hmc_data(workspace_path: str, config: Dict[str, Any], time_start: st
         'TIME_END' : time_end,
         'PATH_SRC' : os.path.join(config["path"]["hmc_data"], "data_forcing"),
         'PATH_GEO' : os.path.join(config["path"]["hmc_data"], "data_geo", "gridded"),
-        #'PATH_DST' : os.path.join(config["path"]["hmc_data"], "data_forcing", "gridded"),
-        'PATH_DST' : os.path.join(config["path"]["hmc_data"], "data_forcing", "converted"),
+        'PATH_DST' : os.path.join(config["path"]["hmc_data"], "data_forcing", "gridded"),
+        #'PATH_DST' : os.path.join(config["path"]["hmc_data"], "data_forcing", "converted"),
         'PATH_LOG' : os.path.join(config["path"]["hmc_data"], "logs"),
         'PATH_TMP' : os.path.join(config["path"]["hmc_data"], "tmp")
     }

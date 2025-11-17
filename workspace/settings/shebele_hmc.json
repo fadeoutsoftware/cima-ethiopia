@@ -1,0 +1,33 @@
+{
+    "general": {
+        "project": "shebele_iwrm",
+        "domain": "shebele"
+    },
+    "path": {
+        "hmc_data": "/home/continuumuser/workdir/data/case_study_ethiopia/",
+        "hmc_output": "/home/continuumuser/workdir/data/case_study_ethiopia/"
+    },
+    "fields": {
+        "by_value": {
+            "dUc": 20,
+            "dUh": 0.6,
+            "dCt": 0.47,
+            "dCf": 0.052,
+            "dCPI": 0.3,
+            "dWTableHbr": 1000,
+            "dKSatRatio": 5,
+            "dSlopeMax": 70,
+            "dCN": 56.01,
+            "dFrac": 0.0,
+            "dWS": 3.6780000000000003e-09,
+            "dWDL": 3.6780000000000003e-09,
+            "iFlagCType": 1,
+            "a1dIntStep": [
+                1,
+                5,
+                60,
+                600
+            ]
+        }
+    }
+}

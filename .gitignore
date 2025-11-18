@@ -4,3 +4,6 @@ workspace/sources/datasets/
 workspace/sources/libraries/__pychache__
 notebook/.ipynb_checkpoints
 .vs
+venv
+data
+docs/build

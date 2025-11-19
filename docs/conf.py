@@ -50,14 +50,16 @@ html_theme_options = {
     "sidebar_hide_name": False,  # keep section title visible
     "navigation_with_keys": True,  # optional keyboard nav
     "light_css_variables": {
-        "color-brand-primary": "#0f294f",
-        "color-brand-content": "#0f294f",
-        "color-foreground-primary" : "#000",
+        "color-brand-primary": "#003664",
+        "color-brand-content": "#003664",
+        "color-foreground-primary" : "#002342",
+        "color-highlight-on-target" : "#A1E4E8"
     },
      "dark_css_variables": {
-        "color-brand-primary": "#50f3fd",
-        "color-brand-content": "#0c64d0",
+        "color-brand-primary": "#0165BD",
+        "color-brand-content": "#0165BD",
         "color-foreground-primary" : "#FFFFFF",
+        "color-highlight-on-target" : "#003664"
     }
 }
 
@@ -69,7 +71,7 @@ html_static_path = ['_static']
 html_css_files = ["custom.css"]
 html_favicon = '_static/favicon.ico'
 
-html_logo = '_static/Logo.jpg'
+html_logo = '_static/Logo.png'
 
 ## Remove source button 
 html_copy_source = False

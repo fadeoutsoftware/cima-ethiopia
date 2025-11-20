@@ -22,6 +22,8 @@ copyright = 'CIMA - 2025'
 author = ''
 
 
+formats = ["pdf"]
+
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be

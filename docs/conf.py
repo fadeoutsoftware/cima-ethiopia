@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'Continuum Training Environment documentation'
+project = 'Continuum Training Environment'
 copyright = 'CIMA - 2025'
 author = ''
 

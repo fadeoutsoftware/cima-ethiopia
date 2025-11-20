@@ -1,4 +1,4 @@
-Cima Etiopia User Guide
+Continuum Exercise Platform User Guide
 ===========================================
 
 The following documentation reports all the required steps to setup your machine to follows 
@@ -69,7 +69,7 @@ Check setup
 _____________________________________________
 Please open a Powershell and check docker installation dy raising the following command::
     
-    docker status
+    docker info
 
 If the setup is correct you should obtain some details like::
     

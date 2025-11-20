@@ -1,4 +1,4 @@
-Continuum Exercise Platform User Guide
+Continuum Training Environment User Guide
 ===========================================
 
 The following documentation reports all the required steps to setup your machine to follows 

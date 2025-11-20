@@ -1,28 +1,70 @@
 Cima Etiopia User Guide
 ===========================================
 
-The following documentation reports all the 
+The following documentation reports all the required steps to setup your machine to follows 
+HMC Tranings, organized by CIMA foundation.
+
 
 Software setup
 ---------------------------------------------
-Before starting the training a setup is required in order to have the correct tools.
+Before starting the training a setup is required in order to have the correct tools available.
+
 In particular the software required are :
 
-- A recent web browser 
+- A recent web browser (Chrome, Edge, Firefox, [..])
 - Docker
-- WSL, in case the host machine has Windows installed
+- Windows Subsystem for Linux (WSL), required by docker itself
 
+All other software dependencies and installations are managed through a docker image which the instructor supplied on site, including experimental data.
+In the following we will refer to those as **Trainings assets**.
 
-To install Docker you can follows official instruction from docker website:
-- Docker for windows 
-- Docker for Linux 
+Docker installation
+_____________________________________________
 
-Loading Runtime for the training
-----------------------------------------------
+To install Docker the main steps are hereby reported. 
+Please open a Powershell terminal with administrator privilege.
+
+ .. figure:: ./_static/01_PowerShell.png
+
+First check the installation of WSL: ::
+
+    wsl --version
+
+If the output looks similar to the following WSL is already installed on your machine : ::
+
+    WSL version: 2.5.9.0
+    Kernel version: 6.6.87.2-1
+    WSLg version: 1.0.66
+    MSRDC version: 1.2.6074
+    Direct3D version: 1.611.1-81528511
+    DXCore version: 10.0.26100.1-240331-1435.ge-release
+    Windows version: 10.0.26200.7171
+
+Otherwise a fresh installation is required, execute the following commands ::
+
+    wsl --install
+
+    wsl --update
+
+The prerequisites are now in place and you can proceed with Docker installation.
+
+Download the latest version of docker from the following link:
+
+- `Docker Desktop Installer for Windows <https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-win-amd64>`
+
+Execute the installer, you will be prompted for a restart of the machine. After restarting the setup is now complete.
+
+Form the tray you now see a new icon
+.. figure:: ./_static/02_IconTray.png
+
+Double click the icon and the Docker Desktop GUI will shows up:
+.. figure:: ./_static/03_DD.png
+
+Great your system is now ready for the training ! Please follows 
 
 Check setup
 _____________________________________________
-Please open a terminal and check docker installation dy raising the following command::
+Please open a Powershell and check docker installation dy raising the following command::
     
     docker status
 
@@ -56,6 +98,13 @@ If the setup is correct you should obtain some details like::
         Version:          0.19.0
         GitCommit:        de40ad0
 
+
+
+Load assets for the training
+----------------------------------------------
+[TODO]
+
+
 Load the runtime environment
 __________________________________________
 The instructor has provided all students a tar archive, containing the runtime setup 
@@ -88,12 +137,9 @@ Open a web browser and navigate to http://localhost:[port]
 
 You should now see a notebook python served by the container:
 
-[IMG NB Python ]
+.. figure:: ./_static/04_NB.png
 
-The setup is up and running, keep attention high and enjoy the training! 
+The setup is up and running, keep attention high and enjoy the training!
 
-_______________________
 
-Troubleshooting
----------------------------------------
 

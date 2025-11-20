@@ -50,17 +50,20 @@ The prerequisites are now in place and you can proceed with Docker installation.
 
 Download the latest version of docker from the following link:
 
-- `Docker Desktop Installer for Windows <https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-win-amd64>`
+`Docker Desktop Installer for Windows <https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-win-amd64>`_
+
+For your convenience you can also refer to `Docker official installation guide <https://docs.docker.com/desktop/setup/install/windows-install/>`_
 
 Execute the installer, you will be prompted for a restart of the machine. After restarting the setup is now complete.
 
 Form the tray you now see a new icon
+
 .. figure:: ./_static/02_IconTray.png
 
 Double click the icon and the Docker Desktop GUI will shows up:
+
 .. figure:: ./_static/03_DD.png
 
-Great your system is now ready for the training ! Please follows 
 
 Check setup
 _____________________________________________
@@ -133,7 +136,7 @@ To start the training you can now raise the following command::
     cima-aircs/hmc-trainig:dev
 
 
-Open a web browser and navigate to http://localhost:[port]
+Open a web browser and navigate to `localhost:8888 <http://localhost:8888>`_
 
 You should now see a notebook python served by the container:
 

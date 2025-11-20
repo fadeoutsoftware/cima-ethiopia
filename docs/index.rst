@@ -62,19 +62,27 @@ The instructor has provided all students a tar archive, containing the runtime s
 for the exercise.
 To load such assets please raise the following command::
 
-    docker load -i cima.tar
+    docker load -i hmc-training.tar
 
-Wait for the process to complete and then raise the following command::
+after the process is complete you should see the following message ::
+    
+    Loaded image: cima-aircs/hmc-trainig:dev
+
+In order to check the actual loading use the following command::
 
     docker image ls
 
-From the list you should see now a new image named [placeholder_image_name]
+From the list you should see now a new image named **cima-aircs/hmc-trainig**
 
-Run the container
+Start the container
 ____________________________________________
 To start the training you can now raise the following command::
 
-    docker run [placeholder_image_name] -p
+    docker run --name hmc-training -d -p 8888:8888 \
+     --volume ./data:/home/continuumuser/workdir/data \
+    --volume ./workspace:/home/continuumuser/workdir/workspace \
+    cima-aircs/hmc-trainig:dev
+
 
 Open a web browser and navigate to http://localhost:[port]
 
@@ -92,3 +100,6 @@ Troubleshooting
 Something something dark side
 _________________________________
 
+
+Something something darker side
+_________________________________

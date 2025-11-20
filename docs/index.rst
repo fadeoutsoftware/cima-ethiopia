@@ -97,9 +97,3 @@ _______________________
 Troubleshooting
 ---------------------------------------
 
-Something something dark side
-_________________________________
-
-
-Something something darker side
-_________________________________

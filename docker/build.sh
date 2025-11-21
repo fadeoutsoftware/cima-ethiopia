@@ -7,4 +7,4 @@ dos2unix ./venvSetup.sh
 
 docker build --no-cache --progress=plain -t cima-aircs/hmc-trainig:dev . 
 
-docker save cima-aircs/hmc-trainig:dev  -o hmc-taining.tar
+docker save cima-aircs/hmc-trainig:dev  -o hmc-training.tar

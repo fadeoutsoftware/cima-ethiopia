@@ -5,3 +5,7 @@ workspace/sources/libraries/__pychache__
 notebook/.ipynb_checkpoints
 .vs
 *.tar
+venv
+data
+docs/build
+hmc-training.tar

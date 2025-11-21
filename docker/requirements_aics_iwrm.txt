@@ -27,3 +27,4 @@ grass-session
 repurpose
 ipympl
 ipywidgets
+ipyleaflet

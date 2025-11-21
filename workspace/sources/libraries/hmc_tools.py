@@ -12,8 +12,8 @@ License: EUPL
 
 __author__ = "Andrea Libertino"
 __email__ = "andrea.libertino@cimafoundation.org"
-__version__ = "1.0.1"
-__date__ = "2025-09-08"
+__version__ = "1.0.2"
+__date__ = "2025-11-21"
 
 import os
 import rasterio as rio
@@ -21,6 +21,22 @@ import numpy as np
 import math
 from copy import deepcopy
 
+def writeHMC2Grass(ancillary_path):
+    """
+    Writes a conversion file used by the HMC model to map HMC flow directions
+    to GRASS's format.
+
+    Args:
+        ancillary_path (str): Directory where the conversion file will be saved.
+    """
+    file_path = os.path.join(ancillary_path, "cont2grass.txt")
+    with open(file_path, "w") as f:
+        lines = [
+            "7 = 3\n", "8 = 2\n", "9 = 1\n", "4 = 4\n",
+            "6 = 8\n", "1 = 5\n", "2 = 6\n", "3 = 7\n", "*=NULL"
+        ]
+        f.writelines(lines)
+        
 def writeGrass2HMC(ancillary_path):
     """
     Writes a conversion file used by the HMC model to map GRASS flow directions

@@ -1,3 +1,4 @@
+workspace/notebook_tools/output
 workspace/notebook*/.*
 workspace/OLD/
 workspace/projects/
@@ -6,6 +7,7 @@ workspace/sources/libraries/__pychache__
 notebook/.ipynb_checkpoints
 .vs
 *.tar
+*.pyc
 venv
 data
 docs/build

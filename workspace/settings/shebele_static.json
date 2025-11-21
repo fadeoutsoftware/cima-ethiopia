@@ -26,6 +26,6 @@
   "path": {
     "data": "data",
     "ancillary": "ancillary",
-    "output": "continuum/data_static/gridded"
+    "output": "continuum/data_geo/gridded"
   }
 }

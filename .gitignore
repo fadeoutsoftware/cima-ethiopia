@@ -4,3 +4,4 @@ workspace/sources/datasets/
 workspace/sources/libraries/__pychache__
 notebook/.ipynb_checkpoints
 .vs
+*.tar

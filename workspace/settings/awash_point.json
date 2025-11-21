@@ -16,7 +16,7 @@
    },
   "path": {
     "data": "data",
-	"gridded_input": "continuum/data_static/gridded",
-    "output": "continuum/data_static/point"
+	"gridded_input": "continuum/data_geo/gridded",
+    "output": "continuum/data_geo/point"
   }
 }

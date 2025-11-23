@@ -1,0 +1,13 @@
+{
+  "general": {
+    "project": "melkaAwash_iwrm",
+    "domain": "melkaAwash"
+  },
+  "data": {
+    "choice": "melkaAwash.choice.txt"
+   },
+  "path": {
+	"gridded_input": "continuum/data_geo/gridded",
+    "output": "continuum/data_forcing/input/ERA-CHIRPS/"
+  }
+}

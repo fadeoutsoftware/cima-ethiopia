@@ -56,7 +56,7 @@ def prepare_hmc_data(workspace_path: str, config: Dict[str, Any], time_start: st
         and uses configuration from 'app_converter_workflow_hmc_iwrn.json'.
     """
     workflow_path = '/app/shybox/workflow/dataset/convert/app_converter_workflow_hmc_iwrn.py'
-    settings_path = os.path.join(workspace_path, 'settings', 'config','app_converter_workflow_hmc_iwrn.json')
+    settings_path = os.path.join(workspace_path, 'settings', 'config','app_converter_workflow_hmc_ETH.json')
     custom_env = {
         'DOMAIN_NAME' : config["general"]["domain"],
         'TIME_START' : time_start,

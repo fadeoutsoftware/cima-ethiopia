@@ -1,0 +1,22 @@
+{
+  "general": {
+    "project": "melkaAwash_iwrm",
+    "domain": "melkaAwash"
+  },
+  "data": {
+    "choice": "melkaAwash.choice.txt",
+    "pnt": "melkaAwash.pnt.txt",
+    "dam_points": "melkaAwash_dams.shp",
+    "lake_points": "melkaAwash_lakes.shp",
+    "section_points": "melkaAwash_sections.shp"
+  },
+  "settings": {
+      "sections_name_col": "Name",
+      "sections_river_col": "River"
+   },
+  "path": {
+    "data": "data",
+	"gridded_input": "continuum/data_geo/gridded",
+    "output": "continuum/data_geo/point"
+  }
+}

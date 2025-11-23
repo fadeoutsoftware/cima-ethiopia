@@ -93,28 +93,28 @@
             },
             "data_source": {
                 "lai": {
-                    "path": "{path_source}/LAI/{path_lai}/",
+                    "path": "{path_source}/input/LAI/{path_lai}/",
                     "file_name": "CLIM_{time_lai}_LAI_clip_bbox_ETH.tif"
                 },    
                 "air_t": {
-                    "path": "{path_source}/",
+                    "path": "{path_source}/input/ERA-CHIRPS/",
                     "file_name": "temperature_{time_source}.nc"
                 },                         
                 "rh": {
-                    "path": "{path_source}/",
+                    "path": "{path_source}/input/ERA-CHIRPS/",
                     "file_name": "relative_humidity_{time_source}.nc"
                 },
                 "inc_rad": {
-                    "path": "{path_source}/",
+                    "path": "{path_source}/input/ERA-CHIRPS/",
                     "file_name": "solar_radiation_{time_source}.nc"
                 },
                  "rain": {
-                    "path": "{path_source}/",
+                    "path": "{path_source}/input/ERA-CHIRPS/",
                     "file_name": "total_precipitation_{time_source}.nc"
                 },                 
                 "wind": {
-                    "path": "{path_source}/",
-                    "file_name": "wind_{time_source}.nc"
+                    "path": "{path_source}/input/ERA-CHIRPS/",
+                    "file_name": "m10_wind_{time_source}.nc"
                 }
             },
             "data_destination": {

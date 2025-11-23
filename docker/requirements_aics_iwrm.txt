@@ -10,7 +10,6 @@ gdal==3.8.4
 bottleneck
 dask
 tqdm
-scipy
 tabulate
 pyresample
 geopandas
@@ -28,3 +27,9 @@ repurpose
 ipympl
 ipywidgets
 ipyleaflet
+cdsapi
+h5netcdf
+parallel
+requests
+tempfile
+hydrostats

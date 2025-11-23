@@ -111,11 +111,11 @@ The instructor has provided all students a usb stick with the content shown in f
 
 In the detail:
 
-- meteo_dataset: contains ERA5 and CHIRPS over all the period
-- workshpace: cointains the static model data and some local datasets for Ethiopia
-- continuum-eth.tar is the runtime setup for the exercise
-- JupyterLaunch.bat/JupyterStop.bat are utilities for launch and stop the training utilities
-- Tools-OptimizeDiskSpace.bat is a tool for optimize disk space if Docker occupy too much space.
+- **meteo_dataset**: contains ERA5 and CHIRPS over all the period
+- **workshpace**: cointains the static model data and some local datasets for Ethiopia
+- **continuum-eth.tar** is the runtime setup for the exercise
+- **JupyterLaunch.bat/JupyterStop.bat** are utilities for launch and stop the training utilities
+- **Tools-OptimizeDiskSpace.bat** is a tool for optimize disk space if Docker occupy too much space.
 
 The students should copy on their laptop in a dedicated folder all, except the "meteo_dataset" folder (it is very big, better to copy only the needed data)
 
@@ -147,7 +147,13 @@ You should now see a notebook python served by the container:
 
 .. figure:: ./_static/04_NB.png
 
-The setup is up and running, keep attention high and enjoy the training!
+The folders contains:
+
+- **notebook_continuum**: the notebook for making the model data and make it run 
+- **notebook_tools**: the preliminary exercise and some ancillary tools useful for model development
+- **projects**: one sub-folder for each project the student will develop
+- **settings**: the notebooks configuration files
+- **sources**: various useful datasets and functions. THe meteorological data should be manually added to this folder.
 
 
 

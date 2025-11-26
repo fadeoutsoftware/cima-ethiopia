@@ -1,0 +1,22 @@
+{
+  "general": {
+    "project": "awashOmbole_iwrm",
+    "domain": "awashOmbole"
+  },
+  "data": {
+    "choice": "awashOmbole.choice.txt",
+    "pnt": "awashOmbole.pnt.txt",
+    "dam_points": "awash_dams.shp",
+    "lake_points": "awash_lakes.shp",
+    "section_points": "awash_sections.shp"
+  },
+  "settings": {
+      "sections_name_col": "Name",
+      "sections_river_col": "River"
+   },
+  "path": {
+    "data": "data",
+	"gridded_input": "continuum/data_geo/gridded",
+    "output": "continuum/data_geo/point"
+  }
+}

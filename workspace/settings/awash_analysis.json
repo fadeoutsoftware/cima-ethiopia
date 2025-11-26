@@ -1,0 +1,10 @@
+{
+  "general": {
+    "project": "awash_iwrm",
+    "domain": "awash"
+  },
+  "path": {
+    "hmc_data": "continuum/",
+    "hmc_output": "continuum/long_run/"
+  }
+}

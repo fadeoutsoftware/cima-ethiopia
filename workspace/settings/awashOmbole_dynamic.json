@@ -1,0 +1,13 @@
+{
+  "general": {
+    "project": "awashOmbole_iwrm",
+    "domain": "awashOmbole"
+  },
+  "data": {
+    "choice": "awashOmbole.choice.txt"
+   },
+  "path": {
+	"gridded_input": "continuum/data_geo/gridded",
+    "output": "continuum/data_forcing/input/ERA-CHIRPS/"
+  }
+}

@@ -4,8 +4,8 @@
         "domain": "shebele"
     },
     "path": {
-        "hmc_data": "/home/continuumuser/workdir/data/case_study_ethiopia/",
-        "hmc_output": "/home/continuumuser/workdir/data/case_study_ethiopia/"
+        "hmc_data": "/home/continuumuser/workdir/projects/shebele_iwrm/continuum/",
+        "hmc_output": "/home/continuumuser/workdir/projects/shebele_iwrm/continuum/test_1/"
     },
     "fields": {
         "by_value": {

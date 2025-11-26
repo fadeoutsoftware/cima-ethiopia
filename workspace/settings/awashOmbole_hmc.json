@@ -1,0 +1,30 @@
+{
+    "general": {
+        "project": "awashOmbole_iwrm",
+        "domain": "awashOmbole"
+    },
+    "path": {
+        "hmc_data": "/home/continuumuser/workdir/projects/awashOmbole_iwrm/continuum/",
+        "hmc_output": "/home/continuumuser/workdir/projects/awashOmbole_iwrm/continuum/test0/"
+    },
+    "fields": {
+        "by_value": {
+            "dUc": 25,
+            "dUh": 0.6,
+            "dCt": 0.47,
+			"dSoil_vmax ": 700,
+			"dSoil_ksat_drain": 3,
+			"dSoil_ksat_infilt" : 9,
+            "dWTableHbr": 600,
+            "dKSatRatio": 1,
+            "dWS": 3.6780000000000003e-09,
+            "dWDL": 3.6780000000000003e-09,
+			"iFlagWS": 0,
+			"iFlagWDL": 0,
+			"dCPI": 0.5,
+			"dWTable_init": 0.3,
+			"sTimeRestart": 201804302300,
+			"iFlagRestart": 0
+        }
+    }
+}

@@ -29,7 +29,5 @@ ipywidgets
 ipyleaflet
 cdsapi
 h5netcdf
-parallel
 requests
-tempfile
 hydrostats

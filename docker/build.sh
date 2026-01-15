@@ -5,6 +5,10 @@ dos2unix ./app_runner_workflow_hmc_base.json
 dos2unix ./requirements.sh
 dos2unix ./venvSetup.sh
 
-docker build --no-cache --progress=plain -t cima-aircs/hmc-trainig:dev . 
+chmod +x launcher.sh
+chmod +x requirements.sh
+chmod +x venvSetup.sh
 
-docker save cima-aircs/hmc-trainig:dev  -o hmc-training.tar
+docker build --no-cache --progress=plain -t continuum-eth . 
+
+docker save continuum-eth  -o continuum-eth.tar

@@ -246,5 +246,3 @@ def makeAlphaBeta(basePath, ancillaryPath, domain):
         dst.write(np.flipud(a2dBeta.astype("float32")), 1)
     with rio.open(a2dAlphaMap, "w", **profile) as dst:
         dst.write(np.flipud(a2dAlpha.astype("float32")), 1)
-
-

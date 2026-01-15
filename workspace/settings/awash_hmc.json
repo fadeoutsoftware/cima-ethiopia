@@ -1,0 +1,30 @@
+{
+    "general": {
+        "project": "awash_iwrm",
+        "domain": "awash"
+    },
+    "path": {
+        "hmc_data": "/home/continuumuser/workdir/projects/awash_iwrm/continuum/",
+        "hmc_output": "/home/continuumuser/workdir/projects/awash_iwrm/continuum/long_run/"
+    },
+    "fields": {
+        "by_value": {
+            "dUc": 25,
+            "dUh": 0.6,
+            "dCt": 0.47,
+			"dSoil_vmax ": 700,
+			"dSoil_ksat_drain": 3,
+			"dSoil_ksat_infilt" : 9,
+            "dWTableHbr": 600,
+            "dKSatRatio": 1,
+            "dWS": 3.6780000000000003e-09,
+            "dWDL": 3.6780000000000003e-09,
+			"iFlagWS": 0,
+			"iFlagWDL": 0,
+			"dCPI": 0.3,
+			"dWTable_init": 0.1,
+			"sTimeRestart": 201804302300,
+			"iFlagRestart": 0
+        }
+    }
+}

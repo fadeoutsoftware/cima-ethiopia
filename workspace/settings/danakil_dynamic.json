@@ -1,0 +1,13 @@
+{
+  "general": {
+    "project": "danakil_iwrm",
+    "domain": "danakil"
+  },
+  "data": {
+    "choice": "danakil.choice.txt"
+   },
+  "path": {
+	"gridded_input": "continuum/data_geo/gridded",
+    "output": "continuum/data_forcing/input/ERA-CHIRPS/"
+  }
+}

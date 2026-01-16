@@ -199,8 +199,8 @@ def run_hmc_model(workspace_path: str, config: Dict[str, Any], time_run: str, ti
         - PATH_LOG: Log files directory
         - PATH_TMP: Temporary files directory
     """
-    # workflow_path = '/app/shybox/workflow/runner/app_runner_workflow_hmc_base_main.py'
-    workflow_path = '/home/continuumuser/workdir/sources/libraries/app_runner_workflow_hmc_base_ETH.py'
+    workflow_path = '/app/shybox/workflow/runner/app_runner_workflow_hmc_base_main.py'
+    # workflow_path = '/home/continuumuser/workdir/sources/libraries/app_runner_workflow_hmc_base_ETH.py'
     settings_template_path = os.path.join(
         workspace_path, 'settings', 'config', 'app_runner_workflow_hmc_base.json'
     )

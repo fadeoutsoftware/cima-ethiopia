@@ -105,44 +105,55 @@ If the setup is correct you should obtain some details like::
 
 Load assets for the training
 ----------------------------------------------
-[TODO]
+The instructor has provided all students a usb stick with the content shown in figure
 
+.. figure:: ./_static/Content_USB.png
+
+In the detail:
+
+- **meteo_dataset**: contains ERA5 and CHIRPS over all the period
+- **workshpace**: cointains the static model data and some local datasets for Ethiopia
+- **continuum-eth.tar** is the runtime setup for the exercise
+- **JupyterLaunch.bat/JupyterStop.bat** are utilities for launch and stop the training utilities
+- **Tools-OptimizeDiskSpace.bat** is a tool for optimize disk space if Docker occupy too much space.
+
+The students should copy on their laptop in a dedicated folder all, except the "meteo_dataset" folder (it is very big, better to copy only the needed data)
 
 Load the runtime environment
 __________________________________________
-The instructor has provided all students a tar archive, containing the runtime setup 
-for the exercise.
+Open Docker Desktop, skip the login phase and minimize to tray.
+Open a terminal in the folder where the "continuum-eth.tar" file has been copied (right-click and then "Open in terminal").
 To load such assets please raise the following command::
 
-    docker load -i hmc-training.tar
+    docker load -i continuum-eth.tar
 
-after the process is complete you should see the following message ::
+It might takes some time. After the process is complete you should see the following message ::
     
-    Loaded image: cima-aircs/hmc-trainig:dev
+    Loaded image: continuum-eth:latest
 
 In order to check the actual loading use the following command::
 
     docker image ls
 
-From the list you should see now a new image named **cima-aircs/hmc-trainig**
+From the list you should see now a new image named **continuum-eth:latest**
 
 Start the container
 ____________________________________________
-To start the training you can now raise the following command::
-
-    docker run --name hmc-training -d -p 8888:8888 \
-     --volume ./data:/home/continuumuser/workdir/data \
-    --volume ./workspace:/home/continuumuser/workdir/workspace \
-    cima-aircs/hmc-trainig:dev
-
-
-Open a web browser and navigate to `localhost:8888 <http://localhost:8888>`_
+To start the training you can double click on the **JupyterLaunch.bat** file.
+After some seconds the internet browser should open and show the notebook environment.
+If not, you can manually open a web browser and navigate to `localhost:8888 <http://localhost:8888>`_
 
 You should now see a notebook python served by the container:
 
 .. figure:: ./_static/04_NB.png
 
-The setup is up and running, keep attention high and enjoy the training!
+The folders contains:
+
+- **notebook_continuum**: the notebook for making the model data and make it run 
+- **notebook_tools**: the preliminary exercise and some ancillary tools useful for model development
+- **projects**: one sub-folder for each project the student will develop
+- **settings**: the notebooks configuration files
+- **sources**: various useful datasets and functions. THe meteorological data should be manually added to this folder.
 
 
 

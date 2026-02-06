@@ -176,7 +176,7 @@ RUN apt-get update && apt-get install -y \
 	tzdata \
 	openjdk-8-jdk \
 	bash-completion \ 
-    python3 python3-dev python3-pip python3.12-venv\
+    python3 python3-dev python3-pip python3.10-venv\
     git build-essential curl nano wget unzip \
 	grass grass-dev grass-doc \
     gdal-bin python3-gdal \
